@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 15px;
+  background-color: white;
+  border-bottom: 2px solid grey;
+}
+header img {
+  height: 20px;
+  margin-right: 8px;
+}
+header .open-menu-btn,
+header .close-menu-btn {
+  background: transparent;
+  border: none;
+}
+header .navigation-dektop {
+  display: none;
+}
+header .navigation-mobile {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 40%;
+  z-index: 100;
+  background-color: white;
+  padding: 20px;
+  gap: 30px;
+}
+header .navigation-mobile.show {
+  display: flex;
+}
+
+header .navigation-mobile img {
+  width: 17px;
+  height: 17px;
+  display: block;
+  margin-bottom: 30px;
+}
+header .navigation-mobile a {
+  color: black;
+  text-decoration: none;
+  font-size: 19px;
+}
+
+/* main  */
+.sneaker-image {
+  position: relative;
+}
+.sneaker-image > img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.sneaker-image button {
+  position: absolute;
+  top: 40%;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+}
+.sneaker-image #next-image {
+  right: 15px;
+}
+.sneaker-image #previous-image {
+  left: 15px;
+}
+.sneaker-image button img {
+  height: 15px;
+}
+.sneaker-image .thumbnails {
+  display: none;
+}
+
+.sneaker-details {
+  padding: 15px;
+}
+.sneaker-details > * {
+  margin-bottom: 16px;
+}
+.sneaker-details .company {
+  color: hsl(26, 100%, 55%);
+  text-transform: uppercase;
+}
+.sneaker-details .description {
+  color: hsl(220, 14%, 75%);
+}
+
+.sneaker-details .counter {
+  display: flex;
+  justify-content: space-between;
+  background: hsl(223, 64%, 98%);
+  border-radius: 9px;
+  padding: 16px;
+  font-weight: bold;
+}
+.sneaker-details .counter button {
+  border: none;
+}
+
+.sneaker-details .add-to-cart-btn {
+  border: none;
+  width: 100%;
+  padding: 16px;
+  color: white;
+  background-color: hsl(26, 100%, 55%);
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 9px;
+}
+.sneaker-details .add-to-cart-btn img {
+  margin-right: 10px;
+  color: white;
+}
+
+@media screen and (min-width: 700px) {
+  main {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px auto;
+  }
+  .sneaker-image {
+    flex: 1 0 0;
+    max-width: 400px;
+  }
+  .sneaker-details {
+    flex: 1 0 0;
+    max-width: 400px;
+  }
+  .sneaker-image button {
+    display: none;
+  }
+
+  .sneaker-image .thumbnails {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    max-width: 400px;
+  }
+  .sneaker-image .thumbnails img {
+    width: 20%;
+  }
+  .sneaker-image .thumbnails img:hover {
+    background-color: aqua;
+    border: 2px solid hsl(26, 100%, 55%);
+  }
+
+  /* 
+  - add a pseudo element after img
+  - make the parent(button) relatively positioned
+  - on hover-- make the pseudo element positioned absolute - all sides 0(top: 0)
+  - give the pseudo element a transparent white bacground
+  */
+
+  /* header */
+  header {
+    justify-content: unset;
+    /* justify-content: flex-start; */
+  }
+  header .navigation-mobile {
+    display: none;
+  }
+  header .navigation-mobile.show {
+    display: none;
+  }
+
+  header .navigation-dektop {
+    display: block;
+  }
+  header .right-header {
+    margin-left: auto;
+  }
+  header .left-header .menu {
+    display: none;
+  }
+}

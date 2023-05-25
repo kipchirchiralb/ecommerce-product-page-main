@@ -1,0 +1,16 @@
+header nav{
+    position: relative;
+    padding: 25px 0;
+    width: ;
+}
+.main-navigation{
+    align-self: flex-start;
+    margin-left: 50px;
+}
+.main-navigation a{
+    position: relative;
+    font-size: 14px;
+    color: gray;
+    margin-right: 33px;
+    transition: 0.1s;
+}
